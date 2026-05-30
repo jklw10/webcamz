@@ -14,7 +14,7 @@ pub fn build(b: *std.Build) void {
     const c_mod = translate_c.createModule();
 
     // 2. Define the main high-level Zig module
-    const webcam_module = b.addModule("webcam", .{
+    const webcam_module = b.addModule("webcamz", .{
         .root_source_file = b.path("src/main.zig"),
         .target = target,
         .optimize = optimize,
@@ -76,7 +76,7 @@ pub fn build(b: *std.Build) void {
     });
     
     // Inject the webcam module to the test program
-    test_exe.root_module.addImport("webcam", webcam_module);
+    test_exe.root_module.addImport("webcamz", webcam_module);
 
     // Install the executable to the output directory (bin/webcam-test)
     b.installArtifact(test_exe);

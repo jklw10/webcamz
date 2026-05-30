@@ -1,5 +1,5 @@
 const std = @import("std");
-const webcam = @import("webcam");
+const webcam = @import("webcamz");
 
 pub fn main() !void {
     std.debug.print("Initializing camera device 0...\n", .{});
